@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head th:replace="ATMHome :: head">
+<meta charset="UTF-8" />
+<title>History Page</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Transaction History</h1>
+		<table class="table table-striped">
+			<tr>
+				<td>account number</td>
+				<td>action</td>
+				<td>amount</td>
+				<td>balance</td>
+				<td>reason</td>
+			</tr>
+			<tr th:each="item : ${transList}">
+				<td th:text="${item.accountNumber}"></td>
+				<td th:text="${item.action}"></td>
+				<td th:text="${item.amount}"></td>
+				<td th:text="${item.balance}"></td>
+				<td th:text="${item.reason}"></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

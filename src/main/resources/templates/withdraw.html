@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="ATMHome :: head">
+<meta charset="UTF-8" />
+<title>Withdraw Page</title>
+</head>
+<body>
+	<h1>This is the withdraw page</h1>
+	
+	<form action="#" th:action="@{/withdraw}" th:object="${ATM}"
+		method="post">
+
+		<p>
+			Id: <input type="text" th:field="*{id}" /> <span
+				th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Id Error</span>
+		</p>
+
+		<p>
+			Account Number: <input type="text" th:field="*{accountNumber}" /> <span
+				th:if="${#fields.hasErrors('accountNumber')}"
+				th:errors="*{accountNumber}">Account Error</span>
+		</p>
+
+		<p>
+			Withdraw Amount: <input type="text" th:field="*{amount}" /> <span
+				th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}">Account
+				Error</span>
+		</p>
+
+		<p>
+			Your Balance Amount: <input type="text" th:field="*{balance}" /> <span
+				th:if="${#fields.hasErrors('balance')}" th:errors="*{balance}">Account
+				Error</span>
+		</p>
+
+		<p>
+			Reasoning: <input type="text" th:field="*{reason}" /> <span
+				th:if="${#fields.hasErrors('reason')}" th:errors="*{reason}">Account
+				Error</span>
+		</p>
+
+		<input type="submit" class="btn btn-default" value="sumbit" />
+
+	</form>
+</body>
+</html>
